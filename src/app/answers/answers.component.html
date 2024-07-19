@@ -1,0 +1,19 @@
+<h2>List of answers</h2>
+<ul class="answers">
+  <li *ngFor="let answer of answers">
+    <a routerLink="/detail/{{answer.id}}">
+      <span class="badge">{{answer.id}}</span> {{answer.text}}
+    </a>
+    <button type="button" class="delete" title="delete answer"
+            (click)="delete(answer)">x</button>
+  </li>
+</ul>
+
+<label for="new-answer">Type new answer here: </label>
+<input id="new-answer" #answerText />
+
+<!-- (click) passes input value to add() and then clears the input -->
+<button type="button" class="add-button" (click)="add(answerText.value); answerText.value=''">
+  Add answer
+</button>
+

@@ -1,0 +1,8 @@
+<h2>Latest questions</h2>
+<div class="questions-menu">
+  <a *ngFor="let question of questions"
+     routerLink="/detail/{{question.questionId}}">
+    {{question.title}}
+  </a>
+</div>
+<app-question-search></app-question-search>
