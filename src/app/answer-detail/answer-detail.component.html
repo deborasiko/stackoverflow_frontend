@@ -1,17 +1,17 @@
 <div *ngIf="answer">
   <h2>Details to: {{answer.text | uppercase}} </h2>
-  <div>id: {{answer.text}}</div>
+  <div>id: {{answer.answerId}}</div>
   <div>
-    <label for="question-title">Question title: </label>
-    <input id="question-title" [(ngModel)]="answer.id" placeholder="Title">
-<!--    <label for="question-text">Question text: </label>-->
-<!--    <input id="question-text" [(ngModel)]="question.text" placeholder="Text">-->
-<!--    <label for="question-author">Author: </label>-->
-<!--    <input id="question-author" [(ngModel)]="question.author" placeholder="Author">-->
-<!--    <label for="question-creation-time">Creation date: </label>-->
-<!--    <input id="question-creation-time" [(ngModel)]="question.creationDateTime" placeholder="Creation date time">-->
-<!--    <label for="question-vote">Vote count: </label>-->
-<!--    <input id="question-vote" [(ngModel)]="question.voteCount" placeholder="Vote count">-->
+    <label for="answer-text">Answer text: </label>
+    <input id="answer-text" [(ngModel)]="answer.text" placeholder="Text">
+    <label for="answer-author">Author: </label>
+    <input id="answer-author" [(ngModel)]="answer.author" placeholder="Author">
+    <label for="answer-question">Question: </label>
+    <input id="answer-question" [(ngModel)]="answer.questionId" placeholder="Question">
+    <label for="question-creation-time">Creation date: </label>
+    <input id="question-creation-time" [(ngModel)]="answer.creationDateTime" placeholder="Creation date time">
+    <label for="question-vote">Vote count: </label>
+    <input id="question-vote" [(ngModel)]="answer.voteCount" placeholder="Vote count">
   </div>
 </div>
 <button type="button" (click)="goBack()">go back</button>

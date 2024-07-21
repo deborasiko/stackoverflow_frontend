@@ -1,4 +1,8 @@
 export interface Answer {
-  id: number;
+  answerId: number;
+  author:string;
   text: string;
+  questionId:number;
+  creationDateTime:string;
+  voteCount:number;
 }

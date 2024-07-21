@@ -23,7 +23,7 @@ export class AnswerService {
         catchError(this.handleError<Answer[]>('getAnswers', []))
       );
   }
-  /** GET hero by id. Will 404 if id not found */
+  /** GET answer by id. Will 404 if id not found */
   getAnswer(id: number): Observable<Answer> {
     const url = `${this.answerUrl}/${id}`;
     return this.http.get<Answer>(url).pipe(
@@ -58,14 +58,14 @@ export class AnswerService {
   /** PUT: update the answer on the server */
   updateAnswer(answer: Answer): Observable<any> {
     return this.http.put(this.answerUrl, answer, this.httpOptions).pipe(
-      tap(_ => this.log(`updated answer id=${answer.id}`)),
+      tap(_ => this.log(`updated answer id=${answer.answerId}`)),
       catchError(this.handleError<any>('updateAnswer'))
     );
   }
   /** POST: add a new hero to the server */
   addAnswer(answer: Answer): Observable<Answer> {
     return this.http.post<Answer>(this.answerUrl, answer, this.httpOptions).pipe(
-      tap((newAnswer: Answer) => this.log(`added answer w/ id=${newAnswer.id}`)),
+      tap((newAnswer: Answer) => this.log(`added answer w/ id=${newAnswer.answerId}`)),
       catchError(this.handleError<Answer>('addAnswer'))
     );
   }

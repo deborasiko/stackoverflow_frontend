@@ -21,7 +21,7 @@ export class AnswersComponent implements OnInit{
 
   onSelect(answer: Answer): void {
     this.selectedAnswer = answer;
-    this.messageService.add(`AnswerComponent: Selected answers id=${answer.id}`);
+    this.messageService.add(`AnswerComponent: Selected answers id=${answer.answerId}`);
   }
 
   getAnswers(): void {
@@ -38,6 +38,6 @@ export class AnswersComponent implements OnInit{
   }
   delete(answer: Answer): void {
     this.answers = this.answers.filter(h => h !== answer);
-    this.answerService.deleteAnswer(answer.id).subscribe();
+    this.answerService.deleteAnswer(answer.answerId).subscribe();
   }
 }

@@ -83,7 +83,7 @@ export class QuestionService {
       // if not search term, return empty question array.
       return of([]);
     }
-    return this.http.get<Question[]>(`${this.questionsUrl}/filterByTitle?${term}`).pipe(
+    return this.http.get<Question[]>(`${this.questionsUrl}/filterByTitle?title=${term}`).pipe(
       tap(x => x.length ?
         this.log(`found questions matching "${term}"`) :
         this.log(`no questions matching "${term}"`)),
